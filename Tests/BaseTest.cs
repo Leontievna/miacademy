@@ -1,7 +1,10 @@
 using NUnit.Framework.Internal;
 using OpenQA.Selenium.Chrome;
+using Allure.NUnit;
 
 namespace miacademy;
+
+[AllureNUnit]
 [TestFixture]
 public class BaseTest
 {

@@ -3,6 +3,7 @@ Represents the page with student data form and checks of expected page.
 */
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
+using Allure.NUnit.Attributes;
 
 namespace miacademy;
 public class ChildDataPageObject(ChromeDriver driver) : BasePage(driver)
@@ -10,7 +11,7 @@ public class ChildDataPageObject(ChromeDriver driver) : BasePage(driver)
     public By backPageButton = By.CssSelector("[page_no=\"2\"] button[elname=\"back\"]");
     public By studentInfo = By.CssSelector("#Section2-li h2");
 
-
+    [AllureStep("Open a student page")]
     public void CheckChildFormPageIsOpen()
     {
         IWebElement infoAboutStudent = driver.FindElement(studentInfo);

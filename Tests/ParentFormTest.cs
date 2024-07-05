@@ -1,8 +1,11 @@
 using NUnit.Framework.Internal;
+using Allure.NUnit;
 
 namespace miacademy;
 
 [TestFixture]
+[AllureNUnit]
+
 public class ParentFormTest : BaseTest
 {
     Randomizer randomizer = new();
