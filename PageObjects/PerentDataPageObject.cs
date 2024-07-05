@@ -4,6 +4,7 @@ Represents the page with parent data form.
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Interactions;
+using OpenQA.Selenium.Internal;
 using SeleniumExtras.WaitHelpers;
 
 namespace miacademy;
@@ -20,10 +21,12 @@ public class PerentDataPageObject(ChromeDriver driver) : BasePage(driver)
     public By inputFieldStartDate = By.CssSelector("input#Date-date");
     public By nextPageButton = By.CssSelector("[page_link_name=\"Page\"] button");
     public By backPageButton = By.CssSelector("[page_no=\"2\"] button[elname=\"back\"]");
+    string partialUrlApplicationForm = "miaplazahelp/form/MOHSInitialApplication";
 
 
-    public void FillInForms(string firstName, string secondName, string number, string email, string dateStudyStart)
+    public ChildDataPageObject FillInForms(string firstName, string secondName, string number, string email, string dateStudyStart)
     {
+        Assert.That(driver.Url, Does.Contain(partialUrlApplicationForm), $"URL has to contain '{partialUrlApplicationForm}'");
         driver.FindElement(nameFirstInput).SendKeys(firstName);
         driver.FindElement(nameSecondInput).SendKeys(secondName);
         driver.FindElement(countryCodeList).Click();
@@ -39,5 +42,6 @@ public class PerentDataPageObject(ChromeDriver driver) : BasePage(driver)
         actions.MoveToElement(ddHiddenOption).Click().Perform();
         //proceed to Student Information page
         driver.FindElement(nextPageButton).Click();
+        return new ChildDataPageObject(driver);
     }
-}
+} 
