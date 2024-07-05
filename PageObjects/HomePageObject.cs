@@ -11,10 +11,11 @@ public class HomePageObject(ChromeDriver driver) : BasePage(driver)
     private By LinkMiaPrepHighSchool = By.XPath("//*[@class=\"mia-announcementText\"]//a");
 
 
-    public void OpenHomePage()
+    public OnlineHighSchoolPageObject OpenHomePage()
     {
         driver.Navigate().GoToUrl(mainUrl);
         //navigate to MiaPrep Online High School through the link on banner
         driver.FindElement(LinkMiaPrepHighSchool).Click();
+        return new OnlineHighSchoolPageObject(driver);
     }
 }

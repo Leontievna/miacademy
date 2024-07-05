@@ -11,10 +11,11 @@ public class OnlineHighSchoolPageObject(ChromeDriver driver) : BasePage(driver)
     By ApplyToMohoButton = By.XPath("//*[@class=\"wp-block-button\"]//a");
 
 
-    public void ApplyToMOHS()
+    public PerentDataPageObject ApplyToMOHS()
     {
         Assert.That(driver.Url, Is.EqualTo(miaprepUrl));
         driver.FindElement(ApplyToMohoButton).Click();
-    }
+        return new PerentDataPageObject(driver);
+    } 
 }
 
