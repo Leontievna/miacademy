@@ -28,4 +28,4 @@ For generating the Allure report locally, follow the instructions below after cl
 ```allure open```
 
 
-For checking the report after last push event to the allure-report brunch open [link](https://leontievna.github.io/miacademy/)
+For checking the report after last push or pull_request to the allure-report brunch open [link](https://leontievna.github.io/miacademy/)
