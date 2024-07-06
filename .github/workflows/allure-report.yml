@@ -1,0 +1,46 @@
+name: allure-report
+
+on:
+  push:
+    branches:
+      - allure-report
+  pull_request:
+    branches:
+      - allure-report
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Set up .NET
+        uses: actions/setup-dotnet@v1
+        with:
+          dotnet-version: '6.0.x'
+
+      - name: Install dependencies
+        run: dotnet restore
+
+      - name: Build the solution
+        run: dotnet build --no-restore
+
+      - name: Run tests and generate Allure results
+        run: |
+          dotnet test --logger:trx --results-directory=./allure-results
+          mkdir -p allure-results
+          cp -r $(find . -name "TestResults") allure-results/
+
+      - name: Generate Allure report
+        run: |
+          npm install -g allure-commandline
+          allure generate allure-results -o allure-report --clean
+
+      - name: Deploy Allure report to GitHub Pages
+        if: success()
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./allure-report
