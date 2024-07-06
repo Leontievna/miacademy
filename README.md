@@ -6,6 +6,8 @@ The main test class is [here](https://github.com/Leontievna/miacademy/blob/main/
 
 **Allure report**
 
+For checking the report after last push or pull_request to the allure-report brunch open [link](https://leontievna.github.io/miacademy/)
+
 For generating the Allure report locally, follow the instructions below after cloning the project to your local machine:
 
 1.Install Alllure Commandline 
@@ -28,4 +30,4 @@ For generating the Allure report locally, follow the instructions below after cl
 ```allure open```
 
 
-For checking the report after last push or pull_request to the allure-report brunch open [link](https://leontievna.github.io/miacademy/)
+
