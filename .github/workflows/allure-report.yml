@@ -29,9 +29,9 @@ jobs:
 
       - name: Run tests and generate Allure results
         run: |
-          dotnet test --logger:trx --results-directory allure-results
+          dotnet test --logger:trx --results-directory = allure-results
           mkdir -p allure-results
-          cp -r $(find . -name "TestResults") allure-results/
+          find . -name "TestResults" -exec cp -r {}/* allure-results/ \;
 
       - name: Generate Allure report
         run: |
