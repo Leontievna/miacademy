@@ -1,2 +1,2 @@
 "Status","Start Time","Stop Time","Duration in ms","Parent Suite","Suite","Sub Suite","Test Class","Test Method","Name","Description"
-"passed","Sat Jul 06 20:43:03 UTC 2024","Sat Jul 06 20:43:12 UTC 2024","8968","","miacademy.ParentFormTest","","miacademy.ParentFormTest","","FillInParentFormViaMiacadamyAndMiaprepLinks",""
+"passed","Sat Jul 06 20:45:39 UTC 2024","Sat Jul 06 20:45:47 UTC 2024","8733","","miacademy.ParentFormTest","","miacademy.ParentFormTest","","FillInParentFormViaMiacadamyAndMiaprepLinks",""
