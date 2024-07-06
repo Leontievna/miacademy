@@ -11,7 +11,13 @@ public class BaseTest
     [SetUp]
     public void Setup()
     {
-        driver = new ChromeDriver();
+        var options = new ChromeOptions();
+        options.AddArgument("--headless");
+        options.AddArgument("--disable-gpu");
+        options.AddArgument("--no-sandbox");
+        options.AddArgument("--disable-dev-shm-usage");
+        driver = new ChromeDriver(options);
+        driver.Manage().Window.Maximize();
     }
 
     [TearDown]
