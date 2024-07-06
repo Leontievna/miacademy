@@ -3,7 +3,6 @@ Represents the home page, includes methods to open the page and navigate to othe
 */
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
-using Allure.NUnit.Attributes;
 
 namespace miacademy;
 public class HomePageObject(ChromeDriver driver) : BasePage(driver)
@@ -11,8 +10,6 @@ public class HomePageObject(ChromeDriver driver) : BasePage(driver)
     string mainUrl = "https://miacademy.co/#/";
     private By LinkMiaPrepHighSchool = By.XPath("//*[@class=\"mia-announcementText\"]//a");
 
-    
-    [AllureStep("Open a #{mainUrl} page and navigate to MiaPrep Online High School")]
     public OnlineHighSchoolPageObject OpenHomePage()
     {
         driver.Navigate().GoToUrl(mainUrl);

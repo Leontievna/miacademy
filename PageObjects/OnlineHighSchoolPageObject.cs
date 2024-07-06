@@ -3,7 +3,6 @@ Represents the MiaPrep Online High School page, includes a check if the page is 
 */
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
-using Allure.NUnit.Attributes;
 
 namespace miacademy;
 public class OnlineHighSchoolPageObject(ChromeDriver driver) : BasePage(driver)
@@ -11,8 +10,6 @@ public class OnlineHighSchoolPageObject(ChromeDriver driver) : BasePage(driver)
     string miaprepUrl = "https://miaprep.com/online-school/";
     By ApplyToMohoButton = By.XPath("//*[@class=\"wp-block-button\"]//a");
 
-
-    [AllureStep("Open a #{miaprepUrl} page and click a button \"Apply to MOHOS\"")]
     public PerentDataPageObject ApplyToMOHS()
     {
         Assert.That(driver.Url, Is.EqualTo(miaprepUrl));

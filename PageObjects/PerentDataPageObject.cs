@@ -5,9 +5,9 @@ using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Interactions;
 using SeleniumExtras.WaitHelpers;
-using Allure.NUnit.Attributes;
 
 namespace miacademy;
+
 public class PerentDataPageObject(ChromeDriver driver) : BasePage(driver)
 {
     public By nameFirstInput = By.XPath("//input[@complink=\"Name_First\"]");
@@ -24,7 +24,6 @@ public class PerentDataPageObject(ChromeDriver driver) : BasePage(driver)
     string partialUrlApplicationForm = "miaplazahelp/form/MOHSInitialApplication";
 
 
-    [AllureStep("Open a page MOHS Initial Application and fill the form of parent's data")]
     public ChildDataPageObject FillInForms(string firstName, string secondName, string number, string email, string dateStudyStart)
     {
         Assert.That(driver.Url, Does.Contain(partialUrlApplicationForm), $"URL has to contain '{partialUrlApplicationForm}'");
