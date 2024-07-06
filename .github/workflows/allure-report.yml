@@ -48,7 +48,7 @@ jobs:
             git config --global user.email "Leontievna@users.noreply.github.com"
             git config --global user.name "Leontievna"
             git checkout -b gh-pages || git checkout gh-pages
-            git pull origin gh-pages --rebase
+            git pull origin gh-pages --allow-unrelated-histories 
             git add ./deploy/allure-report
             git commit -m "Deploy Allure report to GitHub Pages"
             git push origin gh-pages
