@@ -37,27 +37,7 @@ jobs:
           allure generate allure-results -o allure-report --clean
 
       - name: Deploy Allure report to GitHub Pages
-        if: always()
-        run: |
-            mkdir -p ./deploy/allure-report
-            cp -R allure-report/* ./deploy/allure-report
-
-      - name: Commit and push changes
-        if: always()
-        run: |
-            git config --global user.email "Leontievna@users.noreply.github.com"
-            git config --global user.name "Leontievna"
-            git checkout -b gh-pages || git checkout gh-pages
-            git pull origin gh-pages --no-rebase --allow-unrelated-histories 
-            git add ./deploy/allure-report
-            git commit -m "Deploy Allure report to GitHub Pages"
-            git push origin gh-pages --force
-
-      - name: Clean up
-        if: always()
-        run: |
-          rm -rf ./deploy
-        # uses: peaceiris/actions-gh-pages@v4
-        # with:
-        #   github_token: 
-        #   publish_dir: ./allure-report
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./allure-report
