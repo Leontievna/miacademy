@@ -37,13 +37,13 @@ jobs:
           allure generate allure-results -o allure-report --clean
 
       - name: Deploy Allure report to GitHub Pages
-        if: success()
+        if: always()
         run: |
             mkdir -p ./deploy/allure-report
             cp -R allure-report/* ./deploy/allure-report
 
       - name: Commit and push changes
-        if: success()
+        if: always()
         run: |
             git config --global user.email "Leontievna@users.noreply.github.com"
             git config --global user.name "Leontievna"
