@@ -6,7 +6,7 @@ using AllureAfterAttribute = Allure.NUnit.Attributes.AllureAfterAttribute;
 
 namespace techTask;
 
-[AllureNUnit]
+[TestFixture]
 public class BaseTest
 {
     public ChromeDriver driver;
