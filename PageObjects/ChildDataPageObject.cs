@@ -7,6 +7,7 @@ using OpenQA.Selenium.Chrome;
 namespace techTask;
 
 [AllureFeature]
+[TestFixture]
 public class ChildDataPageObject(ChromeDriver driver) : BasePage(driver)
 { 
     public By backPageButton = By.CssSelector("[page_no=\"2\"] button[elname=\"back\"]");

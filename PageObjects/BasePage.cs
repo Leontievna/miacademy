@@ -7,6 +7,7 @@ using OpenQA.Selenium.Chrome;
 namespace techTask;
 
 [AllureNUnit]
+[TestFixture]
 public class BasePage
 {
     protected ChromeDriver driver;
