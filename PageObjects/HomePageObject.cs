@@ -3,17 +3,18 @@ Represents the home page, includes methods to open the page and navigate to othe
 */
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
-using Allure.NUnit.Attributes;
 using SeleniumExtras.WaitHelpers;
+using Allure.NUnit.Attributes;
 
 namespace techTask;
 
+[AllureNUnit]
 public class HomePageObject(ChromeDriver driver) : BasePage(driver)
 {
     string mainUrl = "https://miacademy.co/#/";
     private By LinkMiaPrepHighSchool = By.XPath("//*[@class=\"mia-announcementText\"]//a");
     
-    [AllureFeature("Navigate to MiaPrep Online High School through the link on banner")]    
+    [AllureStep("Navigate to MiaPrep Online High School through the link on banner")]    
     public OnlineHighSchoolPageObject OpenHomePage()
     {
         driver.Navigate().GoToUrl(mainUrl);

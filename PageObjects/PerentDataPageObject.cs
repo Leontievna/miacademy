@@ -5,10 +5,10 @@ using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Interactions;
 using SeleniumExtras.WaitHelpers;
-using Allure.NUnit.Attributes;
 
 namespace techTask;
 
+[AllureNUnit]
 public class PerentDataPageObject(ChromeDriver driver) : BasePage(driver)
 {
     public By nextButton = By.CssSelector("div.inlineBlock.nextAlign  button");

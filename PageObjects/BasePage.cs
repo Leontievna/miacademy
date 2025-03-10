@@ -5,6 +5,8 @@ using OpenQA.Selenium.Support.UI;
 using OpenQA.Selenium.Chrome;
 
 namespace techTask;
+
+[AllureNUnit]
 public class BasePage
 {
     protected ChromeDriver driver;

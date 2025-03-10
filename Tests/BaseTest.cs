@@ -1,15 +1,18 @@
 using NUnit.Framework.Internal;
 using OpenQA.Selenium.Chrome;
+using AllureBeforeAttribute = Allure.NUnit.Attributes.AllureBeforeAttribute;
+using AllureAfterAttribute = Allure.NUnit.Attributes.AllureAfterAttribute;
 
 
 namespace techTask;
 
-[TestFixture]
+[AllureNUnit]
 public class BaseTest
 {
     public ChromeDriver driver;
 
     [SetUp]
+    [AllureBefore("Setup session")]
     public void Setup()
     {
         var options = new ChromeOptions();
@@ -22,6 +25,7 @@ public class BaseTest
     }
 
     [TearDown]
+    [AllureAfter("Dispose session")]
     public void Close()
     {
         driver.Close();

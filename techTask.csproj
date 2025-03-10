@@ -25,8 +25,8 @@
     <PackageReference Include="Selenium.Support" Version="4.29.0" />
     <PackageReference Include="Selenium.WebDriver.ChromeDriver" Version="134.0.6998.3500" />
     <PackageReference Include="DotNetSeleniumExtras.WaitHelpers" Version="3.11.0" />
-    <PackageReference Include="Allure.Net.Commons" Version="2.12.1" />
     <PackageReference Include="Allure.NUnit" Version="2.12.1" />
+    <PackageReference Include="Allure.Net.Commons" Version="2.12.1" />
   </ItemGroup>
 
   <ItemGroup>
