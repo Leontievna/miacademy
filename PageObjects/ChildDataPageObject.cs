@@ -1,7 +1,6 @@
 /*
 Represents the page with student data form and checks of expected page.
 */
-using Allure.NUnit.Attributes;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 

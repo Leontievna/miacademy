@@ -4,7 +4,6 @@ Represents the home page, includes methods to open the page and navigate to othe
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using SeleniumExtras.WaitHelpers;
-using Allure.NUnit.Attributes;
 
 namespace techTask;
 

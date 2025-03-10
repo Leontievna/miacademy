@@ -3,7 +3,6 @@ Represents the MiaPrep Online High School page, includes a check if the page is 
 */
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
-using Allure.NUnit.Attributes;
 
 namespace techTask;
 
