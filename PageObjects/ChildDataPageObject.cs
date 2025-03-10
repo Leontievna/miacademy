@@ -6,7 +6,7 @@ using OpenQA.Selenium.Chrome;
 
 namespace techTask;
 
-[AllureFeature]
+[AllureNUnit]
 [TestFixture]
 public class ChildDataPageObject(ChromeDriver driver) : BasePage(driver)
 { 

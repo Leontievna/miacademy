@@ -1,4 +1,3 @@
-using Allure.Net.Commons;
 
 [SetUpFixture]
 public class AllureConfig
