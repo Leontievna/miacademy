@@ -6,7 +6,7 @@ using OpenQA.Selenium.Chrome;
 
 namespace techTask;
 
-[TestFixture]
+[AllureNUnit]
 public class OnlineHighSchoolPageObject(ChromeDriver driver) : BasePage(driver)
 {
     string miaprepUrl = "https://miaprep.com/online-school/";
