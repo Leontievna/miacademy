@@ -26,7 +26,6 @@ public class ParentFormTest : BaseTest
         string randomDigits = randomNumber.ToString();
         
         //open https://miacademy.co/#/ and navigate to MiaPrepOnlineHighSchool through the link on banner 
-        [AllureStep]
         homePage
         .OpenHomePage()
         //apply to MOHS
